@@ -1,4 +1,4 @@
-var monsterList = ["Aboleth", "Acolyte", "Adult Black Dragon", "Adult Blue Dragon", "Adult Brass Dragon", "Adult Bronze Dragon", "Adult Copper Dragon", "Adult Gold Dragon", "Adult Green Dragon", "Adult Red Dragon", "Adult Silver Dragon", "Adult White Dragon", "Air Elemental", "Ancient Black Dragon", "Ancient Blue Dragon", "Ancient Brass Dragon", "Ancient Bronze Dragon", "Ancient Copper Dragon", "Ancient Gold Dragon", "Ancient Green Dragon", "Ancient Red Dragon", "Ancient Silver Dragon", "Ancient White Dragon", "Androsphinx", "Animated Armor", "Ankheg", "Ape", "Archmage", "Assassin", "Awakened Shrub", "Awakened Tree", "Axe Beak", "Azer", "Baboon", "Badger", "Balor", "Bandit", "Bandit Captain", "Barbed Devil", "Basilisk", "Bat", "Bearded Devil", "Behir", "Berserker", "Black Bear", "Black Dragon Wyrmling", "Black Pudding", "Blink Dog", "Blood Hawk", "Blue Dragon Wyrmling", "Boar", "Bone Devil", "Brass Dragon Wyrmling", "Bronze Dragon Wyrmling", "Brown Bear", "Bugbear", "Bulette", "Camel", "Cat", "Centaur", "Chain Devil", "Chimera", "Chuul", "Clay Golem", "Cloaker", "Cloud Giant", "Cockatrice", "Commoner", "Constrictor Snake", "Copper Dragon Wyrmling", "Couatl", "Crab", "Crocodile", "Cult Fanatic", "Cultist", "Darkmantle", "Death Dog", "Deep Gnome (Svirfneblin)", "Deer", "Deva", "Dire Wolf", "Diseased Giant Rat", "Djinni", "Doppelganger", "Draft Horse", "Dragon Turtle", "Dretch", "Drider", "Drow", "Druid", "Dryad", "Duergar", "Dust Mephit", "Eagle", "Earth Elemental", "Efreeti", "Elephant", "Elk", "Erinyes", "Ettercap", "Ettin", "Fire Elemental", "Fire Giant", "Flesh Golem", "Flying Snake", "Flying Sword", "Frog", "Frost Giant", "Gargoyle", "Gelatinous Cube", "Ghast", "Ghost", "Ghoul", "Giant Ape", "Giant Badger", "Giant Bat", "Giant Boar", "Giant Centipede", "Giant Constrictor Snake", "Giant Crab", "Giant Crocodile", "Giant Eagle", "Giant Elk", "Giant Fire Beetle", "Giant Frog", "Giant Goat", "Giant Hyena", "Giant Lizard", "Giant Octopus", "Giant Owl", "Giant Poisonous Snake", "Giant Rat", "Giant Scorpion", "Giant Sea Horse", "Giant Shark", "Giant Spider", "Giant Toad", "Giant Vulture", "Giant Wasp", "Giant Weasel", "Giant Wolf Spider", "Gibbering Mouther", "Glabrezu", "Gladiator", "Gnoll", "Goat", "Goblin", "Gold Dragon Wyrmling", "Gorgon", "Gray Ooze", "Green Dragon Wyrmling", "Green Hag", "Grick", "Griffon", "Grimlock", "Guard", "Guardian Naga", "Gynosphinx", "Half-Red Dragon Veteran", "Harpy", "Hawk", "Hell Hound", "Hezrou", "Hill Giant", "Hippogriff", "Hobgoblin", "Homunculus", "Horned Devil", "Hunter Shark", "Hydra", "Hyena", "Ice Devil", "Ice Mephit", "Imp", "Invisible Stalker", "Iron Golem", "Jackal", "Killer Whale", "Knight", "Kobold", "Kraken", "Lamia", "Lemure", "Lich", "Lion", "Lizard", "Lizardfolk", "Mage", "Magma Mephit", "Magmin", "Mammoth", "Manticore", "Marilith", "Mastiff", "Medusa", "Merfolk", "Merrow", "Mimic", "Minotaur", "Minotaur Skeleton", "Mule", "Mummy", "Mummy Lord", "Nalfeshnee", "Night Hag", "Nightmare", "Noble", "Ochre Jelly", "Octopus", "Ogre", "Ogre Zombie", "Oni", "Orc", "Otyugh", "Owl", "Owlbear", "Panther", "Pegasus", "Phase Spider", "Pit Fiend", "Planetar", "Plesiosaurus", "Poisonous Snake", "Polar Bear", "Pony", "Priest", "Pseudodragon", "Purple Worm", "Quasit", "Quipper", "Rakshasa", "Rat", "Raven", "Red Dragon Wyrmling", "Reef Shark", "Remorhaz", "Rhinoceros", "Riding Horse", "Roc", "Roper", "Rug of Smothering", "Rust Monster", "Saber-Toothed Tiger", "Sahuagin", "Salamander", "Satyr", "Scorpion", "Scout", "Sea Hag", "Sea Horse", "Shadow", "Shambling Mound", "Shield Guardian", "Shrieker", "Silver Dragon Wyrmling", "Skeleton", "Solar", "Specter", "Spider", "Spirit Naga", "Sprite", "Spy", "Steam Mephit", "Stirge", "Stone Giant", "Stone Golem", "Storm Giant", "Succubus (Incubus)", "Swarm of Bats", "Swarm of Beetles", "Swarm of Centipedes", "Swarm of Insects", "Swarm of Poisonous Snakes", "Swarm of Quippers", "Swarm of Rats", "Swarm of Ravens", "Swarm of Spiders", "Swarm of Wasps", "Tarrasque", "Thug", "Tiger", "Treant", "Tribal Warrior", "Triceratops", "Troll", "Tyrannosaurus Rex", "Unicorn", "Vampire", "Vampire Spawn", "Veteran", "Violet Fungus", "Vrock", "Vulture", "Warhorse", "Warhorse Skeleton", "Water Elemental", "Weasel", "Werebear", "Wereboar", "Wererat", "Weretiger", "Werewolf", "White Dragon Wyrmling", "Wight", "Will-o'-Wisp", "Winter Wolf", "Wolf", "Worg", "Wraith", "Wyvern", "Xorn", "Young Black Dragon", "Young Blue Dragon", "Young Brass Dragon", "Young Bronze Dragon", "Young Copper Dragon", "Young Gold Dragon", "Young Green Dragon", "Young Red Dragon", "Young Silver Dragon", "Young White Dragon", "Zombie"];
+var classList = ["dwarf", "elf", "halfling", "human", "dragonborn", "gnome", "half-elf", "half-orc", "tiefling"];
 
 
 
@@ -6,19 +6,66 @@ var monsterList = ["Aboleth", "Acolyte", "Adult Black Dragon", "Adult Blue Drago
 
 $(document).ready(function() {
 
-/* CYCLE THROUGH MONSTERLIST AND CREATE/APPEND BUTTONS */
-for (i = 0; i < monsterList.length; i++) {
-    var monsterButton = $("<button>");
-    monsterButton.addClass("monster-Button")
-    monsterButton.val(monsterList[i]);
-    monsterButton.text(monsterList[i]);
-    $(".buttons").append(monsterButton)
+/* CYCLE THROUGH LIST AND CREATE/APPEND BUTTONS */
+for (i = 0; i < classList.length; i++) {
+    var classButton = $("<button>");
+    classButton.addClass("class-Button")
+    classButton.val(classList[i]);
+    classButton.text(classList[i]);
+    $(".buttons").append(classButton)
 }
 
-$(".monster-Button").on("click", function() {
-    clickURL = "https://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=0LEkQMuDv5mQAKACkTsCxC8vdi04bbfn&limit=10";
-    console.log(jsonvar = $.getJSON(clickURL, $(this).responseJSON.data[1]));
-    
+$(".class-Button").on("click", function() {
+    limit = "&limit=10";
+    q = "q=" + $(this).val() + "&";
+    clickURL = "https://api.giphy.com/v1/gifs/search?" + q + "api_key=dc6zaTOxFJmzC" + limit;
+    $.get({
+        url: clickURL,
+        method: "GET"
+    }).then(function(result) {
+        var result = result.data;
+        console.log(result);
+        $(".images").empty();
+        for (i = 0; i < result.length; i++) {
+            var animated = result[i].images.fixed_height.url;
+            var still = result[i].images.fixed_height_still.url; 
+            
+            var imageDiv = $("<img>")
+            imageDiv.attr("src", still);
+            imageDiv.attr("data-still", still);
+            imageDiv.attr("data-animate", animated);
+            imageDiv.attr("data-state", "still");
+            imageDiv.addClass("class-Image");
+
+            $(".images").append(imageDiv);
+        } 
+    })
 });
+
+
+$(document).on("click", "image.", function() {
+    console.log(
+        $(this).attr("src"),
+        $(this).attr("data-state"),
+        $(this.dataset),
+    )
+    var animated = $(this).attr("data-animate");
+    var still = $(this).attr("data-still");
+
+    var state = $(this).attr("data-state");
+
+    if(state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"))
+        $(this).attr("src", animated);
+        
+    }
+    else {
+        $(this).attr("src", $(this).attr("data-still"))
+        $(this).attr("src", still)
+    }
+
+    console.log(animated)
+});
+
 
 })
