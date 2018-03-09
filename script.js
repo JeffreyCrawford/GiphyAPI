@@ -2,18 +2,21 @@ var classList = ["dwarf", "elf", "halfling", "human", "dragonborn", "gnome", "ha
 
 
 
-
-
 $(document).ready(function() {
 
-/* CYCLE THROUGH LIST AND CREATE/APPEND BUTTONS */
-for (i = 0; i < classList.length; i++) {
+function makeButtons(valText) {
     var classButton = $("<button>");
     classButton.addClass("class-Button")
-    classButton.val(classList[i]);
-    classButton.text(classList[i]);
+    classButton.val(valText);
+    classButton.text(valText);
     $(".buttons").append(classButton)
 }
+
+
+for (i = 0; i < classList.length; i++) {
+    makeButtons(classList[i]);
+}
+
 
 $(".class-Button").on("click", function() {
     limit = "&limit=10";
@@ -43,28 +46,30 @@ $(".class-Button").on("click", function() {
 });
 
 
-$(document).on("click", "image.", function() {
-    console.log(
-        $(this).attr("src"),
-        $(this).attr("data-state"),
-        $(this.dataset),
-    )
-    var animated = $(this).attr("data-animate");
-    var still = $(this).attr("data-still");
+$(document).on("click", "img", function() {
 
     var state = $(this).attr("data-state");
 
     if(state === "still") {
         $(this).attr("src", $(this).attr("data-animate"))
-        $(this).attr("src", animated);
-        
+        $(this).attr("data-state", "animated") 
     }
     else {
         $(this).attr("src", $(this).attr("data-still"))
-        $(this).attr("src", still)
+        $(this).attr("data-state", "still")
     }
+});
 
-    console.log(animated)
+
+$("form").on("submit", function(event) {
+
+    var valText = $("input:first").val();
+    
+    classList.push(valText);
+    
+    makeButtons(valText)
+
+    event.preventDefault();
 });
 
 
