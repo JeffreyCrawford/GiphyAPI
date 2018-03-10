@@ -2,6 +2,7 @@ body {
     background-image: url("http://wallpaper-gallery.net/images/presidential-wallpaper/presidential-wallpaper-3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .container {
@@ -11,7 +12,7 @@ body {
     opacity: .97;
     font-family: 'JustusRoman', Arial, Helvetica, sans-serif; 
     font-weight: normal; 
-    font-style: normal; 
+    font-style: normal;     
 }
 
 .president-Button {
