@@ -1,5 +1,5 @@
 body {
-    background-image: url(http://www.photos-public-domain.com/wp-content/uploads/2012/05/ivory-off-white-paper-texture.jpg);
+    background-image: url("http://wallpaper-gallery.net/images/presidential-wallpaper/presidential-wallpaper-3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -7,9 +7,11 @@ body {
 .container {
     padding: 15px;
     text-align: center;
+    background-color: whitesmoke;
+    opacity: .97;
 }
 
-.class-Button {
+.president-Button {
     text-align: center;
     padding-left: 15px;
     padding-right: 15px;
@@ -34,10 +36,12 @@ img {
 .textBox {
     height: 45px; 
     font-size: 20px;
-
-    
-    
 }
+
 .submit {
     margin-bottom: 10px;
+}
+
+.rating {
+    font-size: 22px;
 }

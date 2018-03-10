@@ -1,22 +1,21 @@
-var classList = ["dwarf", "elf", "halfling", "human", "dragonborn", "gnome", "half-elf", "half-orc", "tiefling"];
-
+var presidentList = ["donald trump", "barack obama", "george w bush", "bill clinton", "george h w bush", "ronald reagan", "jimmy carter", "gerald ford", "richard nixon", "lyndon johnson", "john f kennedy"];
 
 
 $(document).ready(function() {
 
-/* CREATES A BUTTON WITH CLASSES TEXT AND VALUE = VALTEXT */
+/* CREATES A BUTTON WITH CLASSES, TEXT AND VALUE = VALTEXT */
 function buttonGeneration(valText) {
-    var classButton = $("<button>");
-    classButton.addClass("class-Button btn btn-primary btn-lg")
-    classButton.val(valText);
-    classButton.text(valText);
-    $(".buttons").append(classButton)
+    var presidentButton = $("<button>");
+    presidentButton.addClass("president-Button btn btn-primary btn-lg")
+    presidentButton.val(valText);
+    presidentButton.text(valText);
+    $(".buttons").append(presidentButton)
 }
 
 
 /* INITIAL PAGE LOAD BUTTON CREATION */
-for (i = 0; i < classList.length; i++) {
-    buttonGeneration(classList[i])
+for (i = 0; i < presidentList.length; i++) {
+    buttonGeneration(presidentList[i])
 }
 
 
@@ -32,7 +31,7 @@ $("form").submit( function(event) {
     /* IF TEXT BOX HAS CONTENT, CREATE A BUTTON */
     else {
         /* PUSHES SUBMISSION TO LIST ARRAY */
-        classList.push(valText);
+        presidentList.push(valText);
 
         /* CREATES A NEW BUTTON FROM THE SUBMISSION */
         var valText = $("input:first").val();
@@ -45,7 +44,7 @@ $("form").submit( function(event) {
 
 
 /* CLICK EXISTING BUTTON EVENT */
-$(document).on("click",".class-Button", function() {
+$(document).on("click",".president-Button", function() {
 
     /* EMPTY ALL EXISTING IMAGES */
     $(".images").empty();
@@ -76,7 +75,7 @@ $(document).on("click",".class-Button", function() {
 
             /*  */
             var imageCard = $("<div class='imageCard'>");
-            var rating = $("<p>").text("Rating: " + ratingResult);
+            var rating = $("<p class='rating'>").text("Rating: " + ratingResult);
                         
             /* CREATE <IMG> TAGS AND ASSIGN ANIMATED/STILL URLS AND STATES */
             var imageDiv = $("<img>")
