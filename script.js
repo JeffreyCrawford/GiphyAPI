@@ -1,4 +1,4 @@
-var presidentList = ["john f kennedy", "lyndon johnson", "richard nixon", "gerald ford", "jimmy carter", "ronald reagan", "george h w bush", "bill clinton", "george w bush", "barack obama", "donald trump"];
+var presidentList = ["John F Kennedy", "Lyndon Johnson", "Richard Nixon", "Gerald Ford", "Jimmy Carter", "Ronald Reagan", "George H W Bush", "Bill Clinton", "George W Bush", "Barack Obama", "Donald Trump"];
 
 
 $(document).ready(function() {
