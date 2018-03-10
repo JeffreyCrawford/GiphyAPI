@@ -1,4 +1,4 @@
-var presidentList = ["donald trump", "barack obama", "george w bush", "bill clinton", "george h w bush", "ronald reagan", "jimmy carter", "gerald ford", "richard nixon", "lyndon johnson", "john f kennedy"];
+var presidentList = ["john f kennedy", "lyndon johnson", "richard nixon", "gerald ford", "jimmy carter", "ronald reagan", "george h w bush", "bill clinton", "george w bush", "barack obama", "donald trump"];
 
 
 $(document).ready(function() {
@@ -9,7 +9,7 @@ function buttonGeneration(valText) {
     presidentButton.addClass("president-Button btn btn-primary btn-lg")
     presidentButton.val(valText);
     presidentButton.text(valText);
-    $(".buttons").append(presidentButton)
+    $(".buttons").prepend(presidentButton)
 }
 
 
